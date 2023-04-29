@@ -11,7 +11,6 @@ const registerUser = async (body) => {
     const mobileExist = await userModel.exists({ mobileno: body?.mobileno });
     const userName = await userModel.exists({ userName: body?.userName });
     if (emailExist) {
-        console.log("emil")
       return Error({ message: "email already exist" });
     }
     else if (mobileExist) {
